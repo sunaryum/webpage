@@ -22,7 +22,15 @@
     /* Typography */
     --font-inter: 'Inter', sans-serif;
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
+/* Oculta no Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 * {
     margin: 0;
     padding: 0;

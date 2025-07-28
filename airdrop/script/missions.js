@@ -740,7 +740,7 @@ export async function claimMissionReward(userMission) {
                         'referral'
                     );
                     
-                    showNotification(`Recompensa de referência enviada! +${referralReward.toFixed(2)} SUN`, 'success');
+                    showNotification(`Referral reward sent! +${referralReward.toFixed(2)} SUN`, 'success');
                 }
             } catch (referralError) {
                 console.error('Erro ao enviar recompensa para referenciador:', referralError);

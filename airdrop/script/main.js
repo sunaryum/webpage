@@ -673,8 +673,8 @@ function setupCopyButton() {
     document.getElementById('referral-code-container').addEventListener('click', (e) => {
         if (e.target.id === 'copy-referral') {
             navigator.clipboard.writeText(currentUser.referral_code);
-            showNotification('Código copiado para a área de transferência!');
-            e.target.textContent = 'Copiado!';
+            showNotification('Code copied to the clipboard!');
+            e.target.textContent = 'Copied!';
             setTimeout(() => e.target.textContent = 'Copy', 2000);
         }
     });

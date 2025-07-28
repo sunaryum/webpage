@@ -168,7 +168,15 @@
         .pulse {
             animation: pulse 2s infinite;
         }
+        .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
+/* Oculta no Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
        #copied-notification {
     transform: translateY(-20px);
     transition: all 0.3s ease;
@@ -381,24 +389,16 @@
 
                 <div class="flex mt-4 md:mt-0 space-x-2">
                     <button class="bg-solar text-gray-900 px-4 py-2 rounded-lg font-bold text-sm">All-Time</button>
-                    <button class="glass-panel hover:bg-gray-800 px-4 py-2 rounded-lg text-sm">Weekly</button>
-                    <button class="glass-panel hover:bg-gray-800 px-4 py-2 rounded-lg text-sm">Daily</button>
+                   
                 </div>
             </div>
 
-            <div id="leaderboard-container" class="space-y-4 max-h-[600px] overflow-y-auto pr-2">
-                <!-- O leaderboard será inserido aqui dinamicamente -->
-            </div>
+           <div id="leaderboard-container"
+     class="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-hide">
+</div>
 
-            <div class="mt-8 text-center">
-                <button class="glass-panel hover:bg-gray-800 px-6 py-3 rounded-lg font-bold flex items-center mx-auto">
-                    View full ranking
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-            </div>
+
+       
         </div>
     </main>
     <script src="../script/missions.js" type="module"></script>
