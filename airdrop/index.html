@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunaryum | Tokenizing Solar Energy</title>
+    <link rel="stylesheet" href="style/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ed8f07',
+                        dark: {
+                            900: '#0a0b0e',
+                            800: '#12151c',
+                            700: '#1a1f2a',
+                            600: '#222938',
+                            500: '#2a3346',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Urbanist', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'burst': 'burstAnimation 1s forwards'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        },
+                        burstAnimation: {
+                            '0%': { transform: 'scale(1)', opacity: 1 },
+                            '100%': { transform: 'scale(3)', opacity: 0 }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      
+    </style>
+</head>
+<body class="font-sans">
+ 
+
+    <!-- Header -->
+   <header class="hidden md:block fixed w-full z-50 py-4 px-6 md:px-12 bg-dark-800/80 backdrop-blur-md header-glow">
+
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+          <a href="../">  <img style="width: auto; height: 60px;" src="images/logo.png"></a>
+            </div>
+            
+            <button id="connectWalletBtn" class="relative group bg-dark-700 hover:bg-primary text-primary hover:text-dark-900 font-medium py-2.5 px-6 rounded-full transition-all duration-300 border border-primary/30 hover:border-primary/80">
+                <span>Connect Wallet</span>
+                <span class="absolute inset-0 bg-gradient-to-r from-primary to-orange-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center pt-20 pb-24 px-4">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 space-y-8">
+                    <h1 class="text-4xl md:text-6xl font-heading font-bold leading-tight hero-text">
+                        <span class="bg-gradient-to-r from-orange-300 to-primary bg-clip-text text-transparent">1,000,000 SUN</span> tokens available
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-300 max-w-lg">
+                        First Stage Airdrop — Join the Clean Energy Revolution
+                    </h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button id="connectWalletBtnHero" class="connect-btn relative group bg-primary hover:bg-primary/90 text-dark-900 font-bold py-4 px-8 rounded-xl transition-all duration-300 overflow-hidden">
+    <span class="relative z-10">Connect Wallet</span>
+    <span class="absolute inset-0 bg-gradient-to-r from-orange-300 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+</button>
+                        <button class="relative group bg-dark-700 hover:bg-dark-600 text-white font-medium py-4 px-8 rounded-xl transition-all border border-dark-600">
+                            <a target="_blank" href="../learn/read-the-whitepaper/"><span class="relative z-10">Learn More</span></a>
+                            <span class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="relative flex">
+                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center z-10">
+                                <span class="text-primary font-bold">S</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center -ml-3 z-20">
+                                <span class="text-primary font-bold">U</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center -ml-3 z-30">
+                                <span class="text-primary font-bold">N</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center -ml-3 z-40">
+                                <span class="text-primary font-bold">+</span>
+                            </div>
+                        </div>
+                        <div class="text-gray-400">
+                            <p>Over <span id="userCount" class="font-bold text-white">32,581</span> users have already joined</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 mt-16 md:mt-0 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-primary/10 blur-xl"></div>
+                        <div class="absolute -bottom-10 -left-10 w-48 h-48 rounded-full bg-primary/10 blur-xl"></div>
+                        
+                        <div class="relative bg-dark-800/80 backdrop-blur-sm rounded-2xl p-8 border border-dark-600 shadow-2xl">
+                            <div class="sun-pulse w-24 h-24  from-primary to-orange-300 mx-auto flex items-center justify-center shadow-lg">
+                                 <img style="width: auto; height: 80px;" src="images/simbolo.png">
+                            </div>
+                            
+                            <div class="mt-10">
+                                <div class="energy-grid">
+                                    <!-- Generated with JS -->
+                                </div>
+                                
+                                <div class="mt-8 text-center">
+                                    <h3 class="text-2xl font-heading font-medium bg-gradient-to-r from-orange-200 to-primary bg-clip-text text-transparent">Solar Energy Tokenization</h3>
+                                    <p class="mt-3 text-gray-400">Converting sunlight into tradable digital assets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-dark-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+                        <img src="images/simbolo.png" style="width: auto; height: 30px;">
+                    </div>
+                    <span class="text-xl font-sans font-bold tracking-tight bg-gradient-to-r from-orange-300 to-primary bg-clip-text text-transparent">SUNARYUM</span>
+                </div>
+                
+                <div class="flex space-x-6 text-gray-400">
+                    <a target="_blank" href="https://x.com/sunaryum" class="hover:text-primary transition-colors transform hover:scale-110">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a target="_blank" href="https://discord.gg/WxcFdA2vvh" class="hover:text-primary transition-colors transform hover:scale-110">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/sunaryum" class="hover:text-primary transition-colors transform hover:scale-110">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a target="_blank" href="../learn/read-the-whitepaper/" class="hover:text-primary transition-colors transform hover:scale-110">
+                        <i class="fas fa-file-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                <p>© 2025 Sunaryum Protocol. All rights reserved.</p>
+                <p class="mt-2">Powering the renewable energy revolution through blockchain technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wallet Modal -->
+    <div id="walletModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 wallet-modal">
+        <div class="bg-dark-800 rounded-2xl border border-dark-700 w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="p-6 border-b border-dark-700 flex justify-between items-center">
+                <h3 class="text-2xl font-heading font-semibold">Connect Wallet</h3>
+                <button id="closeModal" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div class="flex border-b border-dark-700">
+                    <button id="walletTab" class="tab-btn py-4 px-6 font-medium border-b-2 border-primary text-primary">Wallet</button>
+                    <button id="createTab" class="tab-btn py-4 px-6 font-medium text-gray-400 hover:text-white">Create</button>
+                    <button id="importTab" class="tab-btn py-4 px-6 font-medium text-gray-400 hover:text-white">Import</button>
+                </div>
+                
+                <!-- Wallet Tab -->
+                <div id="walletTabContent" class="tab-content py-6">
+                    <p class="text-gray-400 mb-6 text-center" id="walletTabMessage">Connect with your preferred wallet</p>
+                    
+                    <div id="walletOptionsContainer" class="space-y-4">
+                        <!-- Wallet options will be inserted here dynamically -->
+                    </div>
+                    
+                    <p class="text-center text-gray-500 text-sm mt-8">
+                        Don't have a wallet? 
+                        <button id="switchToCreate" class="text-primary hover:underline">Create one</button>
+                    </p>
+                </div>
+                
+                <!-- Create Wallet Tab -->
+                <div id="createTabContent" class="tab-content py-6 hidden">
+                    <p class="text-gray-400 mb-6">Your 12-word seed phrase is the key to your wallet. Store it securely and never share it with anyone.</p>
+                    
+                    <div class="bg-dark-700 rounded-xl p-4 mb-6">
+                        <div id="seedPhraseGrid" class="grid grid-cols-3 gap-3">
+                            <!-- Seed words will be generated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button id="generateSeedBtn" class="text-primary hover:text-primary/80 font-medium">
+                            <i class="fas fa-redo mr-2"></i> Generate New
+                        </button>
+                        <button id="toggleVisibilityBtn" class="text-gray-400 hover:text-white">
+                            <i class="fas fa-eye mr-2"></i> <span>Show Seed</span>
+                        </button>
+                        <button id="copySeedBtn" class="text-gray-400 hover:text-white" disabled>
+                            <i class="fas fa-copy mr-2"></i> <span>Copy</span>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex items-center">
+                        <input type="checkbox" id="acceptTerms" class="mr-3 h-5 w-5 text-primary rounded focus:ring-primary">
+                        <label for="acceptTerms" class="text-gray-400 text-sm">I have securely saved my seed phrase and understand it cannot be recovered if lost</label>
+                    </div>
+                    
+                    <button id="createWalletBtn" class="w-full mt-6 bg-primary hover:bg-primary/90 text-dark-900 font-bold py-3 px-4 rounded-lg transition-colors" disabled>
+                        Create Wallet
+                    </button>
+                </div>
+                
+                <!-- Import Wallet Tab -->
+                <div id="importTabContent" class="tab-content py-6 hidden">
+                    <p class="text-gray-400 mb-6">Enter your 12-word seed phrase to access your wallet</p>
+                    
+                    <textarea id="seedInput" class="w-full bg-dark-700 border border-dark-600 rounded-lg p-4 h-40 resize-none text-white focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Enter your 12-word seed phrase separated by spaces"></textarea>
+                    
+                    <div id="importStatus" class="mt-4 text-center"></div>
+                    
+                    <button id="importBtn" class="w-full mt-6 bg-primary hover:bg-primary/90 text-dark-900 font-bold py-3 px-4 rounded-lg transition-colors">
+                        Import Wallet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Extension Modal -->
+    <div id="noExtensionModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="p-6 border-b border-dark-700">
+                <h3 class="text-2xl font-heading font-semibold">Wallet Extension Required</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-400 mb-6">To connect your wallet, please install the Sunaryum Wallet extension.</p>
+                <div class="space-y-4">
+                    <button id="installExtensionOption" class="wallet-option w-full bg-dark-700 hover:bg-dark-600 text-white rounded-xl p-4 flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-orange-400 flex items-center justify-center mr-4">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="font-medium">Install Extension</div>
+                            <div class="text-xs text-gray-400">Get from official store</div>
+                        </div>
+                    </button>
+                    <button id="createWalletOption" class="wallet-option w-full bg-dark-700 hover:bg-dark-600 text-white rounded-xl p-4 flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-orange-400 flex items-center justify-center mr-4">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="font-medium">Create Wallet Without Extension</div>
+                            <div class="text-xs text-gray-400">Temporary solution</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4 border-t border-dark-700 flex justify-end">
+                <button class="close text-gray-400 hover:text-white px-4 py-2">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/index.js" type="module">
+      
+    </script>
+</body>
+</html>
