@@ -163,7 +163,7 @@
                 await triggerConfettiEffect();
 
                 // REDIRECIONAMENTO DIRETO
-                window.location.href = 'airdrop/dashboard/';
+                window.location.href = 'dashboard/';
             }
             
             async function triggerConfettiEffect() {
@@ -688,7 +688,7 @@ if (connectBtnHero) {
                 localStorage.setItem('sunaryumUserId', userId);
                 
                 setTimeout(() => {
-                    window.location.href = 'airdrop/dashboard/';
+                    window.location.href = 'dashboard/';
                 }, 2000);
                 return true;
             }
