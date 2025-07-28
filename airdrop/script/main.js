@@ -169,7 +169,7 @@ function setupEventListeners() {
     document.getElementById('logout-button').addEventListener('click', () => {
         localStorage.removeItem('sunaryumWalletAddress');
         localStorage.removeItem('sunaryumUserId');
-        window.location.href = '/';
+        window.location.href = '../';
     });
 
     document.querySelectorAll('.tab-button').forEach(button => {
