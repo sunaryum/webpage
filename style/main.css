@@ -1,0 +1,163 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #ed8f07;
+            --dark-900: #0a0b0e;
+            --dark-800: #12151c;
+            --dark-700: #1a1f2a;
+            --dark-600: #222938;
+        }
+        
+        body {
+            background-color: var(--dark-900);
+            color: #f0f0f0;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: radial-gradient(ellipse at top, rgba(237, 143, 7, 0.15) 0%, rgba(237, 143, 7, 0) 70%);
+        }
+        
+        .card-glow {
+            box-shadow: 0 0 15px rgba(237, 143, 7, 0.1);
+        }
+        
+        .card-glow:hover {
+            box-shadow: 0 0 25px rgba(237, 143, 7, 0.2);
+        }
+        
+        .sun-pulse {
+            animation: pulse-slow 4s infinite;
+        }
+        
+        .wallet-modal {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 11, 14, 0.95);
+        }
+        
+        .energy-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+        }
+        
+        .energy-cell {
+            aspect-ratio: 1;
+            background: rgba(26, 31, 42, 0.5);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .energy-cell.active {
+            background: linear-gradient(135deg, #ed8f07, #ffb74d);
+        }
+        
+        .header-glow {
+            box-shadow: 0 4px 30px rgba(237, 143, 7, 0.1);
+        }
+        
+        .wallet-option {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(237, 143, 7, 0.1);
+        }
+        
+        .wallet-option:hover {
+            transform: translateY(-3px);
+            border-color: rgba(237, 143, 7, 0.4);
+            box-shadow: 0 10px 20px rgba(237, 143, 7, 0.1);
+        }
+        
+        .tab-content {
+            animation: fade-in 0.3s ease;
+        }
+        
+        .sunaryum-logo {
+            filter: drop-shadow(0 0 10px rgba(237, 143, 7, 0.3));
+        }
+        
+        .sun-gradient {
+            background: linear-gradient(135deg, #ed8f07, #ffb74d);
+        }
+        
+        .hero-text {
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Particles */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(237,143,7,0.8) 0%, rgba(237,143,7,0) 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        .burst-particle {
+            animation: burst 1s forwards;
+            opacity: 0.8;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 11, 14, 0.95);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--dark-800);
+            border: 1px solid var(--dark-700);
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            overflow: hidden;
+        }
+        
+        .status-message {
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .status-message.success {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+        
+        .status-message.error {
+            background: rgba(244, 67, 54, 0.2);
+            color: #F44336;
+        }
+        
+        .seed-word {
+            background: var(--dark-700);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .word-index {
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            font-size: 10px;
+            color: var(--primary);
+        }
